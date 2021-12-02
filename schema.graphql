@@ -1,0 +1,8 @@
+type SumReward @entity {
+
+  id: ID! #id is a required field
+
+  accountReward: BigInt!
+
+  blockHeight: Int!
+}
