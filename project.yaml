@@ -8,11 +8,26 @@ network:
 dataSources:
   - name: main
     kind: substrate/Runtime
-    startBlock: 7000000
+    startBlock: 6000000
     mapping:
       handlers:
-        - handler: handleReward
+        - handler: handleSumReward
           kind: substrate/EventHandler
           filter:
             module: staking
-            method: Rewarded
+            method: Reward          
+        - handler: handleSumRewarded
+          kind: substrate/EventHandler
+          filter:
+            module: staking
+            method: Rewarded                       
+        - handler: handleStakingReward
+          kind: substrate/EventHandler
+          filter:
+            module: staking
+            method: Rewarded     
+        - handler: handleStakingRewarded
+          kind: substrate/EventHandler
+          filter:
+            module: staking
+            method: Rewardeded                      

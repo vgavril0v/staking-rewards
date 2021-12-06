@@ -6,3 +6,15 @@ type SumReward @entity {
 
   blockHeight: Int!
 }
+
+type StakingReward @entity {
+
+  id: ID! #id is a required field
+
+  account: SumReward!
+
+  balance: BigInt!
+  date: Date!
+  blockHeight: Int!
+}
+
